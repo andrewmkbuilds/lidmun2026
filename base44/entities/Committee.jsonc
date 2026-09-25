@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "number": {
+      "type": "number"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "CRISIS",
+        "BEGINNER",
+        "ADVANCED"
+      ]
+    },
+    "is_flagship": {
+      "type": "boolean",
+      "default": false
+    },
+    "heads": {
+      "type": "string"
+    },
+    "coheads": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "topic": {
+      "type": "string"
+    },
+    "logo_url": {
+      "type": "string"
+    },
+    "guide_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "slug"
+  ],
+  "name": "Committee",
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
