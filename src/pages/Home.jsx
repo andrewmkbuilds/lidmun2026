@@ -8,6 +8,8 @@ import DepthBackground from "@/components/DepthBackground";
 import ImageReveal from "@/components/ImageReveal";
 import CountUp from "@/components/CountUp";
 import CardBottomLine from "@/components/CardBottomLine";
+import HomeCardFX from "@/components/HomeCardFX";
+import TiltCard from "@/components/TiltCard";
 import CtaButtons from "@/components/CtaButtons";
 import { GraduationCap, Globe, Zap } from "lucide-react";
 
@@ -134,6 +136,7 @@ function Countdown() {
             {blocks.map((b, i) => (
               <Reveal key={b.u} delay={i * 100} variant="card">
                 <div className="countdown-box text-center relative group">
+                  <HomeCardFX />
                   <div className="text-xs font-mono text-white/40 mb-3">[{b.l}]</div>
                   <div className="countdown-number mb-4">{b.v}</div>
                   <div className="text-white/50 uppercase tracking-widest text-xs font-semibold">{b.u}</div>
@@ -167,13 +170,14 @@ function Stats() {
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {stats.map((s, i) => (
             <Reveal key={s.l} delay={(i + 1) * 100} variant="card">
-              <div className="stat-box-elevated text-center relative group">
+              <TiltCard className="stat-box-elevated text-center relative group">
+                <HomeCardFX />
                 <div className="stat-number mb-4">
                   <CountUp end={s.n} keepPlus={s.plus} />
                 </div>
                 <div className="text-white/60 uppercase tracking-widest text-xs font-semibold">{s.l}</div>
                 <div className="text-xs font-mono text-white/30 mt-2">{s.t}</div>
-              </div>
+              </TiltCard>
             </Reveal>
           ))}
         </div>
@@ -197,20 +201,18 @@ function Features() {
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {features.map((f, i) => (
             <Reveal key={f.title} delay={i * 100} variant="card">
-              <div className="glass-card p-8 group relative overflow-hidden h-full">
+              <TiltCard className="glass-card p-8 group relative overflow-hidden h-full">
+                <HomeCardFX />
                 <div className="absolute top-0 right-0 w-24 h-24 opacity-10 group-hover:opacity-25 transition flex items-center justify-center">
                   <div className="text-5xl font-mono font-bold">{f.tech}</div>
                 </div>
                 <div className="flex items-center gap-4 mb-6 relative z-10">
-                  <div className="w-14 h-14 border border-white/10 flex items-center justify-center group-hover:border-white/30 group-hover:bg-white/5 transition-all duration-500">
-                    <f.Icon className="w-6 h-6 text-white/70 group-hover:text-white transition-colors duration-500" />
-                  </div>
-                  <span className="text-3xl">{f.emoji}</span>
+                  <span className="text-4xl">{f.emoji}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-4 relative z-10" style={{ fontFamily: "'Orbitron', sans-serif" }}>{f.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed relative z-10">{f.desc}</p>
                 <CardBottomLine />
-              </div>
+              </TiltCard>
             </Reveal>
           ))}
         </div>
@@ -230,6 +232,7 @@ function About() {
           <div className="grid md:grid-cols-2 gap-8 mt-16">
             <Reveal delay={200} variant="card">
               <div className="glass-card p-10 relative h-full group">
+                <HomeCardFX />
                 <div className="text-xs font-mono text-white/40 mb-4">[ DIRECTIVE_01 ]</div>
                 <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: "'Orbitron', sans-serif" }}>OUR MISSION</h3>
                 <p className="text-white/60 leading-relaxed text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
@@ -241,6 +244,7 @@ function About() {
 
             <Reveal delay={300} variant="card">
               <div className="glass-card p-10 relative h-full group">
+                <HomeCardFX />
                 <div className="text-xs font-mono text-white/40 mb-4">[ DIRECTIVE_02 ]</div>
                 <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: "'Orbitron', sans-serif" }}>WHAT WE DO</h3>
                 <p className="text-white/60 leading-relaxed text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>
@@ -274,6 +278,7 @@ function Partners() {
           {partners.map((p, i) => (
             <Reveal key={p.name} delay={i * 100} variant="card">
               <div className="stat-box-elevated p-10 flex flex-col items-center justify-center text-center group">
+                <HomeCardFX />
                 <div className="w-24 h-24 border border-white/10 flex items-center justify-center mb-6 group-hover:border-white/30 transition">
                   <ImageReveal src={p.image} alt={p.name} className="w-full h-full object-contain p-3 grayscale group-hover:grayscale-0 transition-all duration-500" delay={i * 100} />
                 </div>

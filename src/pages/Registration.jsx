@@ -49,7 +49,7 @@ export default function Registration() {
               &gt;&gt; SUBMIT DELEGATE APPLICATION
             </a>
             <a
-              href={`https://wa.me/?text=${encodeURIComponent("I just applied for LIDMUN 2026 (Oct 9-11, Academic City UAE)! Join me: https://lidmun.officialmun.workers.dev/registration")}`}
+              href={`https://wa.me/?text=${encodeURIComponent("I just applied for LIDMUN 2026 (Oct 9-11)! Join me: https://lidmun.vercel.app/registration")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-transparent inline-flex mt-4"
